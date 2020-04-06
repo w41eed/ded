@@ -21,11 +21,12 @@
         android:textSize="20sp"
         android:textColor="@color/dedRed"
         android:textStyle="bold"
+        android:onClick="classicMode"
         />
 
     <TextView
-        android:id="@+id/achievements"
-        android:text="@string/achievements"
+        android:id="@+id/ded"
+        android:text="@string/ded"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -34,7 +35,7 @@
         android:textSize="20sp"
         android:textColor="@color/dedRed"
         android:textStyle="bold"
-
+        android:onClick="dedMode"
         />
 
     <TextView
@@ -48,6 +49,7 @@
         android:textSize="20sp"
         android:textColor="@color/dedRed"
         android:textStyle="bold"
+        android:onClick="settingsPage"
         />
 
 

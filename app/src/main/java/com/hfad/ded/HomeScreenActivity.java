@@ -1,31 +1,23 @@
 package com.hfad.ded;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.widget.TextView;
-
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
+import android.view.View;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.List;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 
+
+
 public class HomeScreenActivity extends AppCompatActivity {
 
-    private List<String> longWords;
-    private List<String> mediumWords;
-    private List<String> shortWords;
-
-    //Constants
-    private final int LONG_WORDS = 1;
-    private final int MEDIUM_WORDS = 2;
-    private final int SHORT_WORDS = 3;
-
+    private ArrayList<String> wordList;
+    //private TextView classicBtn, dedBtn, settingsBtn;
     private BufferedReader reader;
 
     @Override
@@ -38,46 +30,28 @@ public class HomeScreenActivity extends AppCompatActivity {
         reader = null;
 
         //Initialize word Lists
-        longWords = new ArrayList<>();
-        mediumWords = new ArrayList<>();
-        shortWords = new ArrayList<>();
+        wordList = new ArrayList<>();
 
         //Load Words from txt files
-        loadData("long.txt",LONG_WORDS);
-        loadData("medium.txt", MEDIUM_WORDS);
-        loadData("short.txt", SHORT_WORDS);
+        loadData();
 
 
     }
 
-    //Loads the words from file into longWords, mediumWords or shortWords
-    private void loadData(String file, int key){
+    //Loads the words from file to wordList
+    private void loadData(){
 
         try {
-
             //Open file
-            reader = new BufferedReader( new InputStreamReader(getAssets().open(file)));
-
+            reader = new BufferedReader( new InputStreamReader(getAssets().open("wordList.txt")));
             //Go through file and add word to corresponding List
             String mLine;
             while((mLine = reader.readLine()) != null){
-
-                //Add line to corresponding Word list
-                switch(key) {
-
-                    case LONG_WORDS:
-                        longWords.add(mLine);
-                        break;
-                    case MEDIUM_WORDS:
-                        mediumWords.add(mLine);
-                        break;
-                    case SHORT_WORDS:
-                        shortWords.add(mLine);
-                        break;
-                }
+                //Add line to  Word list
+                wordList.add(mLine);
             }
         } catch (IOException e) {
-
+                //Log if exception TO-DO
         } finally {
             //close the file
             if (reader != null){
@@ -91,7 +65,23 @@ public class HomeScreenActivity extends AppCompatActivity {
     }
 
 
+    //Takes user to classic mode screen
+    public void classicMode(View view){
+
+        Intent intent = new Intent(getApplicationContext(), classicModeActivity.class);
+        intent.putExtra("WORDS", wordList);
+        startActivity(intent);
+    }
 
 
+    //Takes user to ded mode screen
+    public void dedMode(View view){
 
+    }
+
+
+    //Takes user to settings page screen
+    public void settingsPage(View view){
+
+    }
 }
