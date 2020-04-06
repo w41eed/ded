@@ -3,9 +3,10 @@
     <string name="action_settings">Settings</string>
 
 
-    <string name="classic">CLASSIC</string>
+    <string name="classic">Classic</string>
     <string name="achievements">ACHIEVEMENTS</string>
-    <string name="settings">SETTINGS</string>
+    <string name="ded">ded Mode</string>
+    <string name="settings">Settings</string>
 
 
 </resources>
