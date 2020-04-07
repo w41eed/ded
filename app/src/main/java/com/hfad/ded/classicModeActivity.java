@@ -1,6 +1,7 @@
 package com.hfad.ded;
 
 import android.os.Bundle;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -94,6 +95,12 @@ public class classicModeActivity extends AppCompatActivity {
 
 
     }
+
+
+    //when user chooses a letter
+    public void chooseLetter(View view){
+    }
+
 
 
 }
