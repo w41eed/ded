@@ -20,254 +20,874 @@
         app:layout_constraintVertical_bias="0.794">
 
 
-        <LinearLayout
+        <GridLayout
             android:id="@+id/firstRow"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="25dp"
-            android:gravity="center"
             android:orientation="horizontal"
             tools:ignore="ContentDescription">
 
+
             <ImageView
                 android:id="@+id/q"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/q"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/q"
                 android:onClick="chooseLetter"
+                android:tag="0"
                 />
+            <ImageView
+                android:id="@+id/wrong0"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct0"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/w"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/w"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/w"
                 android:onClick="chooseLetter"
+                android:tag="1"
                 />
+            <ImageView
+                android:id="@+id/wrong1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct1"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
 
 
             <ImageView
                 android:id="@+id/e"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/e"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/e"
+                android:onClick="chooseLetter"
+                android:tag="2"
+                />
+            <ImageView
+                android:id="@+id/wrong2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct2"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
 
             <ImageView
                 android:id="@+id/r"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/r"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/r"
+                android:onClick="chooseLetter"
+                android:tag="3"
+                />
+            <ImageView
+                android:id="@+id/wrong3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct3"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
 
             <ImageView
                 android:id="@+id/t"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/t"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/t"
+                android:onClick="chooseLetter"
+                android:tag="4"
+                />
+            <ImageView
+                android:id="@+id/wrong4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct4"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
             <ImageView
                 android:id="@+id/y"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/y"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/y"
+                android:onClick="chooseLetter"
+                android:tag="5"
+                />
+            <ImageView
+                android:id="@+id/wrong5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct5"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
             <ImageView
                 android:id="@+id/u"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/u"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/u"
+                android:onClick="chooseLetter"
+                android:tag="6"
+                />
+            <ImageView
+                android:id="@+id/wrong6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct6"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
             <ImageView
                 android:id="@+id/i"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/i"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/i"
+                android:onClick="chooseLetter"
+                android:tag="7"
+                />
+            <ImageView
+                android:id="@+id/wrong7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="7"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct7"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="7"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
 
             <ImageView
                 android:id="@+id/o"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/o"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/o"
+                android:onClick="chooseLetter"
+                android:tag="8"
+                />
+            <ImageView
+                android:id="@+id/wrong8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="8"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct8"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="8"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
 
             <ImageView
                 android:id="@+id/p"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/p"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/p"
+                android:onClick="chooseLetter"
+                android:tag="9"
+                />
+            <ImageView
+                android:id="@+id/wrong9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="9"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct9"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="9"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
 
-        </LinearLayout>
+
+        </GridLayout>
 
 
-        <LinearLayout
+        <GridLayout
             android:id="@+id/secondRow"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="25dp"
-            android:gravity="center"
             android:orientation="horizontal"
             tools:ignore="ContentDescription">
 
             <ImageView
                 android:id="@+id/a"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/a"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/a"
+                android:onClick="chooseLetter"
+                android:tag="10"
+                />
+            <ImageView
+                android:id="@+id/wrong10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct10"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/s"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/s"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/s"
+                android:onClick="chooseLetter"
+                android:tag="11"
+                />
+            <ImageView
+                android:id="@+id/wrong11"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct11"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/d"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/d"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/d"
+                android:onClick="chooseLetter"
+                android:tag="12"
+                />
+            <ImageView
+                android:id="@+id/wrong12"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct12"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
             <ImageView
                 android:id="@+id/f"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/f"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/f"
+                android:onClick="chooseLetter"
+                android:tag="13"
+                />
+            <ImageView
+                android:id="@+id/wrong13"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct13"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
 
             <ImageView
                 android:id="@+id/g"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/g"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/g"
+                android:onClick="chooseLetter"
+                android:tag="14"
+                />
+            <ImageView
+                android:id="@+id/wrong14"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct14"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/h"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/h"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/h"
+                android:onClick="chooseLetter"
+                android:tag="15"
+                />
+            <ImageView
+                android:id="@+id/wrong15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct15"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
 
             <ImageView
                 android:id="@+id/j"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/j"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/j"
+                android:onClick="chooseLetter"
+                android:tag="16"
+                />
+            <ImageView
+                android:id="@+id/wrong16"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct16"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
 
             <ImageView
                 android:id="@+id/k"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/k"
-                android:onClick="chooseLetter" />
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/k"
+                android:onClick="chooseLetter"
+                android:tag="17"
+                />
+            <ImageView
+                android:id="@+id/wrong17"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="7"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct17"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="7"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
+
 
             <ImageView
                 android:id="@+id/l"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/l"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/l"
+                android:onClick="chooseLetter"
+                android:tag="18"
+                />
+            <ImageView
+                android:id="@+id/wrong18"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="8"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct18"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="8"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
 
-        </LinearLayout>
+        </GridLayout>
 
 
-        <LinearLayout
+        <GridLayout
             android:id="@+id/thirdRow"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginBottom="25dp"
-            android:gravity="center"
             android:orientation="horizontal"
             tools:ignore="ContentDescription">
 
             <ImageView
                 android:id="@+id/z"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/z"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/z"
+                android:onClick="chooseLetter"
+                android:tag="19"
+                />
+            <ImageView
+                android:id="@+id/wrong19"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct19"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="0"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/x"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/x"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/x"
+                android:onClick="chooseLetter"
+                android:tag="20"
+                />
+            <ImageView
+                android:id="@+id/wrong20"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct20"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/c"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/c"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/c"
+                android:onClick="chooseLetter"
+                android:tag="21"
+                />
+            <ImageView
+                android:id="@+id/wrong21"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct21"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="2"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
+
 
             <ImageView
                 android:id="@+id/v"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/v"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/v"
+                android:onClick="chooseLetter"
+                android:tag="22"
+                />
+            <ImageView
+                android:id="@+id/wrong22"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct22"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="3"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/b"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/b"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/b"
+                android:onClick="chooseLetter"
+                android:tag="23"
+                />
+            <ImageView
+                android:id="@+id/wrong23"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct23"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="4"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/n"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/n"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/n"
+                android:onClick="chooseLetter"
+                android:tag="24"
+                />
+            <ImageView
+                android:id="@+id/wrong24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct24"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="5"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
+
+
+
+
 
             <ImageView
                 android:id="@+id/m"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_margin="5dp"
-                android:background="@drawable/m"
-                android:onClick="chooseLetter"/>
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="5dp"
+                android:src="@drawable/m"
+                android:onClick="chooseLetter"
+                android:tag="25"
+                />
+            <ImageView
+                android:id="@+id/wrong25"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:src="@drawable/wrong"
+                android:visibility="invisible"
+                />
+            <ImageView
+                android:id="@+id/correct25"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:padding="2.5dp"
+                android:layout_row="0"
+                android:layout_column="6"
+                android:src="@drawable/correct"
+                android:visibility="invisible"
+                />
 
-        </LinearLayout>
+        </GridLayout>
 
 
     </LinearLayout>
