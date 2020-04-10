@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.flexbox.FlexboxLayout
+    android:id="@+id/dashLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center"
+    android:layout_gravity="center_horizontal"
+    android:orientation="horizontal"
+    app:flexWrap="wrap"
+    app:alignItems="stretch"
+    app:alignContent="stretch"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintHorizontal_bias="0.452"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
+    app:layout_constraintVertical_bias="0.464"
+    >
+
+
+
+<!--
+
+    <include
+        layout="@layout/dashes_and_letters"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+-->
+
+
+</com.google.android.flexbox.FlexboxLayout>
