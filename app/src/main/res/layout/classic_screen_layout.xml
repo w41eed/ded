@@ -1,20 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/classicLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/homescreended">
 
 
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
+        app:layout_constraintVertical_bias="0.252" />
 
 
     <include
+        layout="@layout/letter_dashes_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.457"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
+        app:layout_constraintVertical_bias="0.53" />
+
+    <include
         android:id="@+id/qwerty_keyboard"
-        android:visibility="visible"
+        layout="@layout/qwerty_keyboard_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        layout="@layout/qwerty_keyboard_layout"/>
+        android:visibility="visible"
+        />
 
 
 
