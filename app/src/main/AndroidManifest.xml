@@ -11,14 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".HomeScreenActivity">
+        <activity
+            android:name=".HomeScreenActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+
         </activity>
 
-        <activity android:name=".classicModeActivity"/>
+        <activity
+            android:name=".classicModeActivity"
+            android:screenOrientation="portrait"
+            />
 
 
 
