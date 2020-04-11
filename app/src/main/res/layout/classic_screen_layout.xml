@@ -23,6 +23,7 @@
         app:layout_constraintVertical_bias="0.252" />
 
 
+    <!--Dynamic addition and removal of dashes and letter imagViews-->
     <include
         layout="@layout/letter_dashes_layout"
         android:layout_width="wrap_content"
@@ -35,6 +36,9 @@
         app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
         app:layout_constraintVertical_bias="0.53" />
 
+
+
+    <!--Qwerty keyboard -->
     <include
         android:id="@+id/qwerty_keyboard"
         layout="@layout/qwerty_keyboard_layout"
