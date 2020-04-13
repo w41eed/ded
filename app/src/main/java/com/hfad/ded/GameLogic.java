@@ -18,15 +18,25 @@ public class GameLogic {
 
 
     private ArrayList<String> wordList;
-    private String currWord;
-    private int wordLen;
-    private int strikeNum;
-    private int score;
     private ArrayList<Integer> indexOfOccurence;
+    private ArrayList<ImageView> dashLetters;
+    private ArrayList<View> lettersUsed;
+    private ArrayList<ImageView> correctsUsed;
+    private ArrayList<ImageView> wrongsUsed;
+
     private String letterChosen;
+    private String currWord;
+
+    private int wordLen;
+    private int currLen;
+    private int chancesLeft;
+    private int score;
+
 
     private Context context;
     private Activity activity;
+
+    private resourcesClass resource;
 
 
     public GameLogic(ArrayList<String> words, Context con, Activity act){
@@ -34,29 +44,78 @@ public class GameLogic {
 
         context = con;
         activity = act;
-
         //Initialize wordList
         wordList = words;
-
-
         //Initialize wordLen
         wordLen = 0;
-
-
-        //initialize strikeNum
-        strikeNum = 0;
-
-
+        //initialize chancesLeft
+        chancesLeft = 6;
         //initialize score
         score = 0;
-
-
         //initialize index of occurrences
         indexOfOccurence = new ArrayList<>();
 
+        lettersUsed = new ArrayList<>();
+        correctsUsed = new ArrayList<>();
+        wrongsUsed = new ArrayList<>();
 
-        createDashes(3);
+
+        //Get Random Word
+        currWord = randomWord(wordList);
+        wordLen = currWord.length();
+        currLen = wordLen;
+        createDashes(wordLen);
+
+        resource = new resourcesClass();
+
+
     }
+
+    //resets everything for a new round
+    private void resetGame(){
+
+
+        //Make all letters clickable again
+        for(int i =0; i<lettersUsed.size(); i++){
+            lettersUsed.get(i).setClickable(true);
+        }
+
+        //Make all correct images invisible
+        for(int i=0; i<correctsUsed.size(); i++){
+             correctsUsed.get(i).setVisibility(View.INVISIBLE);
+        }
+
+        //Make all wrong images invisible
+        for(int i=0; i<wrongsUsed.size(); i++){
+            wrongsUsed.get(i).setVisibility(View.INVISIBLE);
+        }
+
+        //
+
+        //Reset the tracking arrayLists
+        lettersUsed = new ArrayList<>();
+        correctsUsed = new ArrayList<>();
+        wrongsUsed = new ArrayList<>();
+
+        //Reset indexOfOccurrences
+        indexOfOccurence = new ArrayList<>();
+
+        //Get New Random Word
+        currWord = randomWord(wordList);
+        wordLen = currWord.length();
+        currLen = wordLen;
+
+        //Create Dashes
+        createDashes(wordLen);
+
+        //reset Chances
+        chancesLeft = 6;
+
+
+
+    }
+
+
 
 
     //Checks If letter selected is in the current selected string
@@ -89,6 +148,11 @@ public class GameLogic {
         Random rand = new Random();
         int upperBound = words.size();
         int randNum = rand.nextInt(upperBound);
+
+        //FOR TESTING
+        TextView test = activity.findViewById(R.id.test);
+        test.setText(words.get(randNum));
+
         return words.get(randNum);
     }
 
@@ -99,8 +163,52 @@ public class GameLogic {
         //retrieves view Id in string format
         letterChosen = context.getResources().getResourceEntryName(view.getId());
 
+        //Letter is not clickable now
         view.setClickable(false);
 
+        //Add letter to keep track
+        lettersUsed.add(view);
+
+        //Check if letter is in the word
+        indexOfOccurence = whereIsLetterInWord(letterChosen, currWord);
+
+        if(indexOfOccurence != null){
+            //Letter is correct
+
+            //Correct image over letter
+            isCorrect(view);
+
+            for(int i=0; i<indexOfOccurence.size(); i++){
+
+                dashLetters.get(indexOfOccurence.get(i)).setImageResource(resource.getLetterSrc(letterChosen));
+            }
+
+            currLen = currLen - indexOfOccurence.size();
+            if(currLen == 0){
+                resetGame();
+            }
+
+
+        } else {
+            //Letter is wrong
+            isWrong(view);
+            chancesLeft--;
+
+            if(chancesLeft == 0){
+
+                //for testing
+                resetGame();
+                //gameOver();
+            }
+
+
+        }
+
+
+    }
+
+    //If chosen letter is correct then do this
+    public void isCorrect(View view){
         String correct = "correct";
         String tag = String.valueOf(view.getTag());
         correct = correct + tag;
@@ -108,33 +216,52 @@ public class GameLogic {
         ImageView correctView = activity.findViewById(resId);
         correctView.setVisibility(View.VISIBLE);
 
-        //FOR TESTING
-        TextView test = activity.findViewById(R.id.test);
-        test.setText(letterChosen);
+        //keep track of correct images used
+        correctsUsed.add(correctView);
 
     }
 
+    //If chosen letter is wrong then do this
+    public void isWrong(View view){
+        String wrong = "wrong";
+        String tag = String.valueOf(view.getTag());
+        wrong = wrong + tag;
+        int resId = context.getResources().getIdentifier(wrong,"id", context.getPackageName());
+        ImageView wrongView = activity.findViewById(resId);
+        wrongView.setVisibility(View.VISIBLE);
+
+        //keep track of wrong images used
+        wrongsUsed.add(wrongView);
+    }
 
 
     //Creates a linear layout with 2 image views in it
     private void createDashes(int blocks){
+
+        dashLetters = new ArrayList<>();
 
         ViewGroup cl = activity.findViewById(R.id.classicLayout);
 
         LayoutInflater inflater = activity.getLayoutInflater();
         FlexboxLayout flex =  cl.findViewById(R.id.dashLayout);//inflater.inflate(R.layout.letter_dashes_layout,null);
 
+        //Remove previous views
+        flex.removeAllViews();
+
         for (int i = 0; i < blocks; i++) {
 
             //Get a Clone of the Linear Layout with the ImageViews
             LinearLayout child = (LinearLayout) inflater.inflate(R.layout.dashes_and_letters, null);
             ImageView let =  child.findViewById(R.id.correct_letter);
-            let.setImageResource(R.drawable.a);
+
+            //Add image view to dashLetters to keep track of them.
+            dashLetters.add(let);
+
+            /*let.setImageResource(R.drawable.a);*/
 
             //Add view to flex Layout
-            if(flex != null){
-                flex.addView(child);
-            }
+            flex.addView(child);
+
         }
     }
 
