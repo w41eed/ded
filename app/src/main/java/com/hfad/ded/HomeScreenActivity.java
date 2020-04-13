@@ -81,6 +81,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     //Takes user to classic mode screen
     public void classicMode(View view){
 
+
+
         Intent intent = new Intent(getApplicationContext(), classicModeActivity.class);
         intent.putExtra("WORDS", wordList);
         startActivity(intent);
@@ -90,12 +92,15 @@ public class HomeScreenActivity extends AppCompatActivity {
     //Takes user to ded mode screen
     public void dedMode(View view){
 
+        Intent intent = new Intent(getApplicationContext(), HomeScreenActivity.class);
+        startActivity(intent);
     }
 
 
     //Takes user to settings page screen
     public void settingsPage(View view){
-
+        TextView test1 = findViewById(R.id.ded);
+        test1.setText("changed");
     }
 
 
