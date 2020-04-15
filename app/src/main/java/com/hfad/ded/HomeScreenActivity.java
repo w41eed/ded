@@ -55,7 +55,7 @@ public class HomeScreenActivity extends AppCompatActivity {
 
                 int len=mLine.length();
                 //Add words with length 2 - 10
-                if(len >= 2 && len <= 10) {
+                if(len > 3 && len <= 10) {
                     //Add line to  Word list
                     wordList.add(mLine);
                 }
@@ -81,8 +81,6 @@ public class HomeScreenActivity extends AppCompatActivity {
     //Takes user to classic mode screen
     public void classicMode(View view){
 
-
-
         Intent intent = new Intent(getApplicationContext(), classicModeActivity.class);
         intent.putExtra("WORDS", wordList);
         startActivity(intent);
@@ -92,15 +90,12 @@ public class HomeScreenActivity extends AppCompatActivity {
     //Takes user to ded mode screen
     public void dedMode(View view){
 
-        Intent intent = new Intent(getApplicationContext(), HomeScreenActivity.class);
-        startActivity(intent);
     }
 
 
     //Takes user to settings page screen
     public void settingsPage(View view){
-        TextView test1 = findViewById(R.id.ded);
-        test1.setText("changed");
+
     }
 
 
@@ -116,7 +111,7 @@ public class HomeScreenActivity extends AppCompatActivity {
         for(int i = 0; i<wordList.size(); i++) {
 
              int len= wordList.get(i).length();
-             if(len < 2){
+             if(len <= 2){
                  index++;
              }
         }
