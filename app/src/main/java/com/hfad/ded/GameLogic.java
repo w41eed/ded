@@ -38,6 +38,15 @@ public class GameLogic {
 
     private resourcesClass resource;
 
+    private final int STRIKE_RESET = 0;
+    private final int STRIKE_ONE = 1;
+    private final int STRIKE_TWO = 2;
+    private final int STRIKE_THREE = 3;
+    private final int STRIKE_FOUR = 4;
+    private final int STRIKE_FIVE = 5;
+    private final int STRIKE_SIX = 6;
+
+
 
     public GameLogic(ArrayList<String> words, Context con, Activity act){
 
@@ -110,7 +119,7 @@ public class GameLogic {
 
         //reset Chances
         chancesLeft = 6;
-
+        chancesLeft(chancesLeft);
 
 
     }
@@ -193,8 +202,10 @@ public class GameLogic {
             //Letter is wrong
             isWrong(view);
             chancesLeft--;
+            chancesLeft(chancesLeft);
 
             if(chancesLeft == 0){
+
 
                 //for testing
                 resetGame();
@@ -266,6 +277,16 @@ public class GameLogic {
     }
 
 
+
+    private void chancesLeft(int chanceNum){
+
+        //Get Hangman view
+        ImageView hangMan = activity.findViewById(R.id.hangMan);
+
+        //Change Image based on strike num
+        hangMan.setImageResource(resource.getHangManSrc(chanceNum));
+
+    }
     //When replacing blank image view with correctly selected letter,
     //get indices of occurrences of letter and replace letter at that spot
     //To check if word is complete, subtract remaining length of string with length of occurrence array
