@@ -10,6 +10,20 @@
     android:background="@drawable/homescreended">
 
 
+    <!--Dynamic addition and removal of dashes and letter imagViews-->
+
+    <ImageView
+        android:id="@+id/hangMan"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:src="@drawable/stage"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
+        app:layout_constraintVertical_bias="0.122" />
+
     <TextView
         android:id="@+id/test"
         android:layout_width="match_parent"
@@ -20,10 +34,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
-        app:layout_constraintVertical_bias="0.252" />
+        app:layout_constraintVertical_bias="0.022" />
 
-
-    <!--Dynamic addition and removal of dashes and letter imagViews-->
     <include
         layout="@layout/letter_dashes_layout"
         android:layout_width="wrap_content"
@@ -45,9 +57,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:visibility="visible"
-        />
-
-
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-292dp" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
