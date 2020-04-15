@@ -7,10 +7,11 @@ public class resourcesClass {
 
 
     private Hashtable<String, Integer> letterImages;
-
+    private Hashtable<Integer, Integer> hangManImages;
 
     public resourcesClass(){
         letterImages = new Hashtable<>();
+        hangManImages = new Hashtable<>();
         initializeHash();
     }
 
@@ -18,6 +19,8 @@ public class resourcesClass {
    //Initializes the hash tables
     private void initializeHash(){
 
+
+        //Initialize LetterImages hash
         letterImages.put("a", R.drawable.a);
         letterImages.put("b", R.drawable.b);
         letterImages.put("c", R.drawable.c);
@@ -46,6 +49,16 @@ public class resourcesClass {
         letterImages.put("z", R.drawable.z);
 
 
+
+        //Initialize Hangman Hash
+        hangManImages.put(6, R.drawable.stage);
+        hangManImages.put(5, R.drawable.mstrike1);
+        hangManImages.put(4, R.drawable.mstrike2);
+        hangManImages.put(3, R.drawable.mstrike3);
+        hangManImages.put(2, R.drawable.mstrike4);
+        hangManImages.put(1, R.drawable.mstrike5);
+        hangManImages.put(0, R.drawable.mstrike6);
+
     }
 
 
@@ -67,6 +80,25 @@ public class resourcesClass {
         return temp_int ;
     }
 
+
+
+    //Get the corresponding resource file to the strike num
+    public int getHangManSrc(int chancesLeft){
+
+        //If return is -1 then error occurred
+        int temp_int = -1;
+
+        //Get Value
+        Integer temp_object  = hangManImages.get(chancesLeft);
+
+        //To avoid null object exception
+        if(temp_object != null) {
+            temp_int = temp_object;
+        }
+
+        //Returns Resource ID if lookup successful, else returns -1
+        return temp_int ;
+    }
 
 
 }
