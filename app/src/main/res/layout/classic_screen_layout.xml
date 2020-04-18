@@ -12,7 +12,7 @@
 
     <!--Dynamic addition and removal of dashes and letter imagViews-->
 
-    <ImageView
+    <pl.droidsonroids.gif.GifImageView
         android:id="@+id/hangMan"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
