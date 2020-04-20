@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="fab_margin">16dp</dimen>
+
+    <dimen name="key_dimen">40dp</dimen>
+    <dimen name="letter_pad">5dp</dimen>
+    <dimen name="check_pad">2.5dp</dimen>
+    <dimen name="dash_letter">30dp</dimen>
+    <dimen name="dash_line_width">35dp</dimen>
+    <dimen name="dash_line_height">10dp</dimen>
+
+</resources>
