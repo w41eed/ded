@@ -3,7 +3,6 @@
     android:id="@+id/classicLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -12,17 +11,8 @@
 
     <!--Dynamic addition and removal of dashes and letter imagViews-->
 
-    <pl.droidsonroids.gif.GifImageView
-        android:id="@+id/hangMan"
-        android:layout_width="wrap_content"
-        android:layout_height="300dp"
-        android:src="@drawable/stage"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
-        app:layout_constraintVertical_bias="0.122" />
+
+    <!--Qwerty keyboard -->
 
     <TextView
         android:id="@+id/test"
@@ -31,34 +21,52 @@
         android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
-        app:layout_constraintVertical_bias="0.022" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
+
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/hangMan"
+        android:layout_width="wrap_content"
+        android:layout_height="260dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="20dp"
+        android:paddingBottom="50dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/stage"
+        app:layout_constraintBottom_toTopOf="@id/dashLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+         />
 
     <include
+        android:id="@+id/dashLayout"
         layout="@layout/letter_dashes_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toTopOf="@id/qwerty_keyboard"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/hangMan" />
+
+    <include
+        android:id="@+id/qwerty_keyboard"
+        layout="@layout/qwerty_keyboard_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="100dp"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/qwerty_keyboard"
-        app:layout_constraintVertical_bias="0.53" />
-
-
-
-    <!--Qwerty keyboard -->
-    <include
-        android:id="@+id/qwerty_keyboard"
-        layout="@layout/qwerty_keyboard_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="visible"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-292dp" />
+        app:layout_constraintTop_toBottomOf="@id/dashLayout"
+        />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
