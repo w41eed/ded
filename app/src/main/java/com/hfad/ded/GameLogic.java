@@ -2,6 +2,7 @@ package com.hfad.ded;
 
 import android.app.Activity;
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +21,7 @@ public class GameLogic {
     private ArrayList<String> wordList;
     private ArrayList<Integer> indexOfOccurence;
     private ArrayList<ImageView> dashLetters;
+    private ArrayList<ImageView> dashDashes;
     private ArrayList<View> lettersUsed;
     private ArrayList<ImageView> correctsUsed;
     private ArrayList<ImageView> wrongsUsed;
@@ -32,6 +34,7 @@ public class GameLogic {
     private int chancesLeft;
     private int score;
 
+    private LinearLayout keyboard;
 
     private Context context;
     private Activity activity;
@@ -68,6 +71,7 @@ public class GameLogic {
 
         resource = new resourcesClass();
 
+        setKeyboardClickable(true);
 
     }
 
@@ -112,6 +116,8 @@ public class GameLogic {
         chancesLeft = 6;
         chancesLeft(chancesLeft);
 
+        //Make keyboard clickable again
+        setKeyboardClickable(true);
 
     }
 
@@ -185,6 +191,7 @@ public class GameLogic {
 
             currLen = currLen - indexOfOccurence.size();
             if(currLen == 0){
+                showGreenWord();
                 resetGame();
             }
 
@@ -197,9 +204,11 @@ public class GameLogic {
 
             if(chancesLeft == 0){
 
-
+                showRedWord();
+                //Make keyboard un clickable
+                setKeyboardClickable(false);
                 //for testing
-                resetGame();
+                //resetGame();
                 //gameOver();
             }
 
@@ -226,7 +235,7 @@ public class GameLogic {
 
     //If chosen letter is wrong then do this
     public void isWrong(View view){
-        String wrong = "wrong";
+        String wrong = "correct";
         String tag = String.valueOf(view.getTag());
         wrong = wrong + tag;
         int resId = context.getResources().getIdentifier(wrong,"id", context.getPackageName());
@@ -244,6 +253,7 @@ public class GameLogic {
     private void createDashes(int blocks){
 
         dashLetters = new ArrayList<>();
+        dashDashes = new ArrayList<>();
 
         ViewGroup cl = activity.findViewById(R.id.classicLayout);
 
@@ -258,10 +268,10 @@ public class GameLogic {
             //Get a Clone of the Linear Layout with the ImageViews
             LinearLayout child = (LinearLayout) inflater.inflate(R.layout.dashes_and_letters, null);
             ImageView let =  child.findViewById(R.id.correct_letter);
-
+            ImageView dash = child.findViewById(R.id.dash);
             //Add image view to dashLetters to keep track of them.
             dashLetters.add(let);
-
+            dashDashes.add(dash);
             /*let.setImageResource(R.drawable.a);*/
 
             //Add view to flex Layout
@@ -283,6 +293,57 @@ public class GameLogic {
 
     }
 
+
+    //Shows full word in Green after users gets it correct
+    private void showGreenWord(){
+
+        //Change all dashes to green
+        for(int i=0; i<dashDashes.size(); i++){
+            dashDashes.get(i).setImageResource(R.drawable.greendash);
+        }
+
+        //Show all letters in green
+        for(int i=0; i<currWord.length(); i++){
+
+            dashLetters.get(i).setImageResource(resource.getGreenLetterSrc(String.valueOf(currWord.charAt(i))));
+
+        }
+    }
+
+
+    //Shows full word in red after users gets it wrong
+    private void showRedWord(){
+
+        //Change dashes to red
+        for(int i=0; i<dashDashes.size(); i++){
+            dashDashes.get(i).setImageResource(R.drawable.reddash);
+        }
+
+        //Show all letters in red
+        for(int i=0; i<currWord.length(); i++){
+
+            dashLetters.get(i).setImageResource(resource.getRedLetterSrc(String.valueOf(currWord.charAt(i))));
+
+        }
+
+    }
+
+    private void setKeyboardClickable(boolean toggle){
+
+        for(char keys='a'; keys <= 'z'; keys++){
+
+            int resId = context.getResources().getIdentifier(String.valueOf(keys),"id", context.getPackageName());
+            ImageView keyView= activity.findViewById(resId);
+
+            if(toggle){
+                //Turn on touch
+                keyView.setClickable(true);
+            } else {
+                //turn off touch
+                keyView.setClickable(false);
+            }
+        }
+    }
 
 
 }
