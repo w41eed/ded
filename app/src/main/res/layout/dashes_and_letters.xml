@@ -11,14 +11,14 @@
 
     <ImageView
         android:id="@+id/correct_letter"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="@dimen/dash_letter"
+        android:layout_height="@dimen/dash_letter"
          />
 
     <ImageView
         android:id="@+id/dash"
-        android:layout_width="35dp"
-        android:layout_height="10dp"
+        android:layout_width="@dimen/dash_line_width"
+        android:layout_height="@dimen/dash_line_height"
         android:src="@drawable/dash"
         />
 
