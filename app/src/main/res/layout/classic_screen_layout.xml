@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/classicLayout"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -14,40 +14,41 @@
 
     <!--Qwerty keyboard -->
 
-    <TextView
-        android:id="@+id/test"
+
+    <include
+        android:id="@+id/gamebar"
+        layout="@layout/gamebar_layout"
+        tools:layout_editor_absoluteX="-16dp"
+        tools:layout_editor_absoluteY="116dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.922" />
+        app:layout_constraintBottom_toTopOf="@id/hangMan"
+        />
 
     <pl.droidsonroids.gif.GifImageView
         android:id="@+id/hangMan"
-        android:layout_width="wrap_content"
-        android:layout_height="260dp"
+        android:layout_width="@dimen/hang_man_width"
+        android:layout_height="@dimen/hang_man_height"
         android:layout_marginTop="40dp"
-        android:layout_marginBottom="20dp"
-        android:paddingBottom="50dp"
+        android:layout_marginBottom="10dp"
         android:scaleType="centerCrop"
         android:src="@drawable/stage"
         app:layout_constraintBottom_toTopOf="@id/dashLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-         />
+        app:layout_constraintTop_toBottomOf="@id/gamebar"  />
 
     <include
         android:id="@+id/dashLayout"
         layout="@layout/letter_dashes_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="20dp"
         app:layout_constraintBottom_toTopOf="@id/qwerty_keyboard"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -68,5 +69,17 @@
         app:layout_constraintTop_toBottomOf="@id/dashLayout"
         />
 
+
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.922" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
