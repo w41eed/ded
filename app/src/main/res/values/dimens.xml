@@ -4,7 +4,12 @@
     <dimen name="key_dimen">35dp</dimen>
     <dimen name="letter_pad">5dp</dimen>
     <dimen name="check_pad">2.5dp</dimen>
+
     <dimen name="dash_letter">25dp</dimen>
     <dimen name="dash_line_width">30dp</dimen>
     <dimen name="dash_line_height">10dp</dimen>
+
+    <dimen name="hang_man_width">300dp</dimen>
+    <dimen name="hang_man_height">200dp</dimen>
+
 </resources>

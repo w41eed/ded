@@ -6,8 +6,13 @@
     <dimen name="key_dimen">40dp</dimen>
     <dimen name="letter_pad">5dp</dimen>
     <dimen name="check_pad">2.5dp</dimen>
+
     <dimen name="dash_letter">30dp</dimen>
     <dimen name="dash_line_width">35dp</dimen>
     <dimen name="dash_line_height">10dp</dimen>
+
+    <dimen name="hang_man_width">400dp</dimen>
+    <dimen name="hang_man_height">260dp</dimen>
+
 
 </resources>
