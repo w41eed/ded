@@ -12,4 +12,7 @@
     <dimen name="hang_man_width">300dp</dimen>
     <dimen name="hang_man_height">200dp</dimen>
 
+    <dimen name="gamebar_text_size">20sp</dimen>
+
+
 </resources>
