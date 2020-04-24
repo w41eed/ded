@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/classic_game_over"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="250dp"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:background="@drawable/wrong_box"
+    android:padding="5dp"
+    >
+
+    <ImageView
+        android:id="@+id/wrong_feedback"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/wrong_text"
+        android:layout_margin="20dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/play_again"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wrong_play_again"
+            android:layout_margin="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/go_home_wrong"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/wrong_go_home"
+            android:layout_margin="20dp"
+            />
+
+
+    </LinearLayout>
+
+</LinearLayout>
