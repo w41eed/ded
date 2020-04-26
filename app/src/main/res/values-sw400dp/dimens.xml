@@ -15,5 +15,10 @@
     <dimen name="hang_man_height">260dp</dimen>
 
     <dimen name="gamebar_text_size">25sp</dimen>
+    <dimen name="gamebar_record_width">80dp</dimen>
+    <dimen name="gamebar_record_height">25dp</dimen>
+
+    <dimen name="gamebar_round_width">75dp</dimen>
+    <dimen name="gamebar_round_height">20dp</dimen>
 
 </resources>
