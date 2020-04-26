@@ -52,15 +52,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@id/qwerty_keyboard"
+        app:layout_constraintBottom_toTopOf="@id/keyboard_layout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/hangMan" />
 
+
+
+    <!--Switches between the keyboards-->
+
     <include
-        android:id="@+id/qwerty_keyboard"
-        layout="@layout/qwerty_keyboard_layout"
+        layout="@layout/keyboard_layout"
+        android:id="@+id/keyboard_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="100dp"
@@ -71,6 +75,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashLayout"
         />
+
 
 
     <TextView
@@ -84,7 +89,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.922"
-        android:visibility="gone"/>
+        android:visibility="visible"/>
 
 
 
@@ -98,6 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashLayout"
         app:layout_constraintVertical_bias="0.2"
+        android:layout_margin="10dp"
         android:visibility="invisible"
 
         />
@@ -112,6 +118,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dashLayout"
         app:layout_constraintVertical_bias="0.2"
+        android:layout_margin="10dp"
         android:visibility="invisible"
         />
 
