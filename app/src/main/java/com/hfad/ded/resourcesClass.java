@@ -9,13 +9,17 @@ public class resourcesClass {
     private Hashtable<String, Integer> letterImages;
     private Hashtable<String, Integer> RedLetterImages;
     private Hashtable<String, Integer> GreenLetterImages;
-    private Hashtable<Integer, Integer> hangManImages;
+    private Hashtable<Integer, Integer> hangManImages, hangWomanImages;
+
+    private final String MALE = "m";
+    private final String FEMALE = "f";
 
     public resourcesClass(){
         letterImages = new Hashtable<>();
         RedLetterImages = new Hashtable<>();
         GreenLetterImages = new Hashtable<>();
         hangManImages = new Hashtable<>();
+        hangWomanImages = new Hashtable<>();
         initializeHash();
     }
 
@@ -125,6 +129,22 @@ public class resourcesClass {
         hangManImages.put(1, R.drawable.mstrike5);
         hangManImages.put(0, R.drawable.mstrike6);
 
+
+
+        //Initialize HangWoman Hash
+        //First integer is Chances Left
+        //Seconf Integer is Strike num resource file
+        hangWomanImages.put(6, R.drawable.stage);
+        hangWomanImages.put(5, R.drawable.fstrike1);
+        hangWomanImages.put(4, R.drawable.fstrike2);
+        hangWomanImages.put(3, R.drawable.fstrike3);
+        hangWomanImages.put(2, R.drawable.fstrike4);
+        hangWomanImages.put(1, R.drawable.fstrike5);
+        hangWomanImages.put(0, R.drawable.fstrike6);
+
+
+
+
     }
 
 
@@ -189,14 +209,24 @@ public class resourcesClass {
 
 
 
-    //Get the corresponding resource file to the strike num
-    public int getHangManSrc(int chancesLeft){
+    //Get the corresponding resource file to the strike num and gender
+    public int getHangManSrc(int chancesLeft, String gender){
 
         //If return is -1 then error occurred
         int temp_int = -1;
+        Integer temp_object = null;
 
-        //Get Value
-        Integer temp_object  = hangManImages.get(chancesLeft);
+        switch (gender) {
+            case MALE:
+                //Get Value
+                temp_object = hangManImages.get(chancesLeft);
+                break;
+            case FEMALE:
+                //Get Value
+                temp_object = hangWomanImages.get(chancesLeft);
+                break;
+        }
+
 
         //To avoid null object exception
         if(temp_object != null) {
