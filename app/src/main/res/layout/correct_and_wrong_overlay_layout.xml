@@ -1,0 +1,408 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cnw_overlay"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:paddingTop="20dp"
+    >
+
+
+    <GridLayout
+        android:id="@+id/firstRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal"
+        tools:ignore="ContentDescription"
+        >
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct0"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct1"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct2"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct3"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct4"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct5"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct6"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct7"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct8"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="8"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct9"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="9"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+    </GridLayout>
+
+
+    <GridLayout
+        android:id="@+id/secondRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal"
+        tools:ignore="ContentDescription">
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct10"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct11"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct12"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct13"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct14"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct15"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct16"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct17"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="7"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct18"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="8"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+    </GridLayout>
+
+
+    <GridLayout
+        android:id="@+id/thirdRow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="25dp"
+        android:orientation="horizontal"
+        tools:ignore="ContentDescription">
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct19"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="0"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct20"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct21"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="2"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct22"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="3"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct23"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="4"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct24"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="5"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+
+
+
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/correct25"
+            android:layout_width="@dimen/key_dimen"
+            android:layout_height="@dimen/key_dimen"
+            android:padding="@dimen/check_pad"
+            android:layout_row="0"
+            android:layout_column="6"
+            android:src="@drawable/correct"
+            android:visibility="invisible"
+            />
+
+    </GridLayout>
+
+
+</LinearLayout>
+
