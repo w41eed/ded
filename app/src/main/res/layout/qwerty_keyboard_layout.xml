@@ -33,7 +33,8 @@
                 android:onClick="chooseLetter"
                 android:tag="0"
                 />
-            <pl.droidsonroids.gif.GifImageView
+
+            <!--<pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct0"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -43,7 +44,7 @@
                 android:src="@drawable/correct"
                 android:visibility="invisible"
                 />
-
+-->
 
 
 
@@ -57,7 +58,7 @@
                 android:onClick="chooseLetter"
                 android:tag="1"
                 />
-            <pl.droidsonroids.gif.GifImageView
+         <!--   <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct1"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -66,7 +67,7 @@
                 android:layout_column="1"
                 android:src="@drawable/correct"
                 android:visibility="invisible"
-                />
+                />-->
 
 
 
@@ -79,7 +80,7 @@
                 android:onClick="chooseLetter"
                 android:tag="2"
                 />
-            <pl.droidsonroids.gif.GifImageView
+        <!--    <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct2"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -90,7 +91,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
             <ImageView
@@ -102,7 +103,7 @@
                 android:onClick="chooseLetter"
                 android:tag="3"
                 />
-            <pl.droidsonroids.gif.GifImageView
+        <!--    <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct3"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -114,7 +115,7 @@
                 />
 
 
-
+-->
 
             <ImageView
                 android:id="@+id/t"
@@ -125,7 +126,7 @@
                 android:onClick="chooseLetter"
                 android:tag="4"
                 />
-            <pl.droidsonroids.gif.GifImageView
+        <!--    <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct4"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -136,7 +137,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
             <ImageView
                 android:id="@+id/y"
@@ -147,7 +148,7 @@
                 android:onClick="chooseLetter"
                 android:tag="5"
                 />
-            <pl.droidsonroids.gif.GifImageView
+         <!--   <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct5"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -158,7 +159,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
             <ImageView
                 android:id="@+id/u"
@@ -169,7 +170,7 @@
                 android:onClick="chooseLetter"
                 android:tag="6"
                 />
-            <pl.droidsonroids.gif.GifImageView
+         <!--   <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct6"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -179,7 +180,7 @@
                 android:src="@drawable/correct"
                 android:visibility="invisible"
                 />
-
+-->
 
 
             <ImageView
@@ -191,7 +192,7 @@
                 android:onClick="chooseLetter"
                 android:tag="7"
                 />
-            <pl.droidsonroids.gif.GifImageView
+        <!--    <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct7"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -202,7 +203,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
             <ImageView
@@ -214,7 +215,7 @@
                 android:onClick="chooseLetter"
                 android:tag="8"
                 />
-            <pl.droidsonroids.gif.GifImageView
+          <!--  <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct8"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -225,7 +226,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
             <ImageView
@@ -237,7 +238,7 @@
                 android:onClick="chooseLetter"
                 android:tag="9"
                 />
-            <pl.droidsonroids.gif.GifImageView
+         <!--   <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct9"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -247,7 +248,7 @@
                 android:src="@drawable/correct"
                 android:visibility="invisible"
                 />
-
+-->
 
         </GridLayout>
 
@@ -270,7 +271,7 @@
                 android:onClick="chooseLetter"
                 android:tag="10"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct10"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -280,7 +281,7 @@
                 android:src="@drawable/correct"
                 android:visibility="invisible"
                 />
-
+-->
 
 
 
@@ -294,7 +295,7 @@
                 android:onClick="chooseLetter"
                 android:tag="11"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct11"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -305,7 +306,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
 
@@ -318,7 +319,7 @@
                 android:onClick="chooseLetter"
                 android:tag="12"
                 />
-            <pl.droidsonroids.gif.GifImageView
+       <!--     <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct12"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -328,7 +329,7 @@
                 android:src="@drawable/correct"
                 android:visibility="invisible"
                 />
-
+-->
 
 
             <ImageView
@@ -340,7 +341,7 @@
                 android:onClick="chooseLetter"
                 android:tag="13"
                 />
-            <pl.droidsonroids.gif.GifImageView
+          <!--  <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct13"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -351,7 +352,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
 
@@ -365,7 +366,7 @@
                 android:onClick="chooseLetter"
                 android:tag="14"
                 />
-            <pl.droidsonroids.gif.GifImageView
+          <!--  <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct14"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -377,7 +378,7 @@
                 />
 
 
-
+-->
 
 
             <ImageView
@@ -389,7 +390,7 @@
                 android:onClick="chooseLetter"
                 android:tag="15"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct15"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -401,7 +402,7 @@
                 />
 
 
-
+-->
 
             <ImageView
                 android:id="@+id/j"
@@ -412,7 +413,7 @@
                 android:onClick="chooseLetter"
                 android:tag="16"
                 />
-            <pl.droidsonroids.gif.GifImageView
+          <!--  <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct16"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -422,7 +423,7 @@
                 android:src="@drawable/correct"
                 android:visibility="invisible"
                 />
-
+-->
 
 
             <ImageView
@@ -434,7 +435,7 @@
                 android:onClick="chooseLetter"
                 android:tag="17"
                 />
-            <pl.droidsonroids.gif.GifImageView
+        <!--    <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct17"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -446,7 +447,7 @@
                 />
 
 
-
+-->
 
 
 
@@ -459,7 +460,7 @@
                 android:onClick="chooseLetter"
                 android:tag="18"
                 />
-            <pl.droidsonroids.gif.GifImageView
+         <!--   <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct18"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -468,7 +469,7 @@
                 android:layout_column="8"
                 android:src="@drawable/correct"
                 android:visibility="invisible"
-                />
+                />-->
 
         </GridLayout>
 
@@ -491,7 +492,7 @@
                 android:onClick="chooseLetter"
                 android:tag="19"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct19"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -502,7 +503,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
 
@@ -515,7 +516,7 @@
                 android:onClick="chooseLetter"
                 android:tag="20"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct20"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -527,7 +528,7 @@
                 />
 
 
-
+-->
 
 
             <ImageView
@@ -539,7 +540,7 @@
                 android:onClick="chooseLetter"
                 android:tag="21"
                 />
-            <pl.droidsonroids.gif.GifImageView
+        <!--    <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct21"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -550,7 +551,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
 
@@ -564,7 +565,7 @@
                 android:onClick="chooseLetter"
                 android:tag="22"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct22"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -576,7 +577,7 @@
                 />
 
 
-
+-->
 
 
             <ImageView
@@ -588,7 +589,7 @@
                 android:onClick="chooseLetter"
                 android:tag="23"
                 />
-            <pl.droidsonroids.gif.GifImageView
+       <!--     <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct23"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -599,7 +600,7 @@
                 android:visibility="invisible"
                 />
 
-
+-->
 
 
 
@@ -612,7 +613,7 @@
                 android:onClick="chooseLetter"
                 android:tag="24"
                 />
-            <pl.droidsonroids.gif.GifImageView
+           <!-- <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct24"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -624,7 +625,7 @@
                 />
 
 
-
+-->
 
 
             <ImageView
@@ -636,7 +637,7 @@
                 android:onClick="chooseLetter"
                 android:tag="25"
                 />
-            <pl.droidsonroids.gif.GifImageView
+         <!--   <pl.droidsonroids.gif.GifImageView
                 android:id="@+id/correct25"
                 android:layout_width="@dimen/key_dimen"
                 android:layout_height="@dimen/key_dimen"
@@ -645,7 +646,7 @@
                 android:layout_column="6"
                 android:src="@drawable/correct"
                 android:visibility="invisible"
-                />
+                />-->
 
         </GridLayout>
 
