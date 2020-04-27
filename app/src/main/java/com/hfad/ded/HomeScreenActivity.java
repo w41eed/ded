@@ -95,7 +95,8 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     //Takes user to settings page screen
     public void settingsPage(View view){
-
+        Intent intent = new Intent(getApplicationContext(), settingsActivity.class);
+        startActivity(intent);
     }
 
 
