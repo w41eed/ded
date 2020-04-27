@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    android:id="@+id/settings"
+<LinearLayout android:id="@+id/settings"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
@@ -8,7 +7,9 @@
     android:background="@drawable/homescreended"
     android:padding="10dp"
     android:layout_gravity="center"
-    android:gravity="center_horizontal">
+    android:gravity="center_horizontal"
+    tools:ignore="ContentDescription"
+    xmlns:tools="http://schemas.android.com/tools">
 
 
 
@@ -36,7 +37,7 @@
             />
 
         <ImageView
-            android:layout_width="@dimen/settings_title_width"
+            android:layout_width="0dp"
             android:layout_height="@dimen/settings_title_height"
             android:src="@drawable/settings_title"
             android:layout_marginStart="2dp"
@@ -58,7 +59,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
 
