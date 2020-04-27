@@ -19,4 +19,16 @@
     <dimen name="gamebar_round_width">65dp</dimen>
     <dimen name="gamebar_round_height">15dp</dimen>
 
+    <dimen name="settings_title_width">120dp</dimen>
+    <dimen name="settings_title_height">50dp</dimen>
+    <dimen name="settings_home_dimen">30dp</dimen>
+
+    <dimen name="character_title_width">100dp</dimen>
+    <dimen name="character_title_height">30dp</dimen>
+
+    <dimen name="sound_title_width">75dp</dimen>
+    <dimen name="sound_title_height">25dp</dimen>
+
+    <dimen name="icon_dimen">100dp</dimen>
+
 </resources>
