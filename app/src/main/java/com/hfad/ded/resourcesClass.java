@@ -11,8 +11,8 @@ public class resourcesClass {
     private Hashtable<String, Integer> GreenLetterImages;
     private Hashtable<Integer, Integer> hangManImages, hangWomanImages;
 
-    private final String MALE = "m";
-    private final String FEMALE = "f";
+    private final String MALE = "male";
+    private final String FEMALE = "female";
 
     public resourcesClass(){
         letterImages = new Hashtable<>();
