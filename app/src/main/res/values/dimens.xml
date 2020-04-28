@@ -4,6 +4,7 @@
     <dimen name="key_dimen">35dp</dimen>
     <dimen name="letter_pad">5dp</dimen>
     <dimen name="check_pad">2.5dp</dimen>
+    <dimen name="keyboard_margin_bottom">20dp</dimen>
 
     <dimen name="dash_letter">25dp</dimen>
     <dimen name="dash_line_width">30dp</dimen>
