@@ -13,12 +13,14 @@ import android.view.animation.TranslateAnimation;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.ViewFlipper;
 
 import com.google.android.flexbox.FlexboxLayout;
 
 import java.util.ArrayList;
 import java.util.Random;
 
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.transition.Slide;
 import androidx.transition.Transition;
 
@@ -33,7 +35,7 @@ public class GameLogic {
 
     private String currWord;
 
-    private int wordLen, currLen, chancesLeft, score;
+    private int wordLen, currLen, chancesLeft, score, highScore;
 
     private Context context;
     private Activity activity;
@@ -42,6 +44,12 @@ public class GameLogic {
 
     private LinearLayout gameOver_dialog;
     private LinearLayout win_dialog;
+
+    private ViewFlipper keyboard;
+
+    //Settings
+    private String gender, keyboardStyle, sound;
+    private storageHandler storage;
 
     public GameLogic(ArrayList<String> words, Context con, Activity act){
 
@@ -77,10 +85,6 @@ public class GameLogic {
         //set all listeners
         setListeners();
 
-        //intialize score
-        score = 1;
-        setScore(score);
-
 
         //get dialog id
         gameOver_dialog = activity.findViewById(R.id.classic_game_over);
@@ -90,7 +94,27 @@ public class GameLogic {
         slideDown(win_dialog, 0);
 
 
+        //Get settings
+        storage = new storageHandler(context);
+        gender = storage.getGender();
+        keyboardStyle = storage.getKeyboard();
+        sound = storage.getSound();
+        score = storage.getRoundNum();
+        setScore(score);
+        highScore = storage.getHighScore();
+        setHighScore(highScore);
+
+        //Set keyboard
+        keyboard = activity.findViewById(R.id.keyboards);
+        if(keyboardStyle.equals("qwerty")){
+            keyboard.setDisplayedChild(0);
+        } else{
+            keyboard.setDisplayedChild(1);
+        }
+
+
     }
+
 
     //resets everything for a new round
     private void resetGame(){
@@ -215,7 +239,7 @@ public class GameLogic {
                 score++;
                 //Make keyboard un clickable
                 setKeyboardClickable(false);
-                //show next round dialog
+                //show next round dialog //Score view gets updated after this is visible
                 setCorrectWordVisibility(true);
 
             }
@@ -229,6 +253,12 @@ public class GameLogic {
 
             if(chancesLeft == 0){
 
+                //check if new highscore
+                if(score > highScore){
+                    highScore = score;
+                    //store new high score but dont show yet
+                    setHighScore(highScore);
+                }
                 //Show full word in red
                 showRedWord();
                 //Make keyboard un clickable
@@ -237,13 +267,16 @@ public class GameLogic {
                 setGameOverVisibility(true);
                 //resetGame();
                 //gameOver();
+
             }
-
-
         }
-
-
     }
+
+
+
+
+
+
 
     //If chosen letter is correct then do this
     public void isCorrect(View view){
@@ -274,6 +307,9 @@ public class GameLogic {
         //keep track of wrong images used
         wrongsUsed.add(wrongView);
     }
+
+
+
 
 
     //Creates a linear layout with 2 image views in it
@@ -308,6 +344,9 @@ public class GameLogic {
     }
 
 
+
+
+
     //Takes in the number of chances left and changes
     // the hangman imageView to reflect chances left
     private void chancesLeft(int chanceNum){
@@ -316,9 +355,13 @@ public class GameLogic {
         ImageView hangMan = activity.findViewById(R.id.hangMan);
 
         //Change Image based on strike num
-        hangMan.setImageResource(resource.getHangManSrc(chanceNum));
+        hangMan.setImageResource(resource.getHangManSrc(chanceNum, gender));
 
     }
+
+
+
+
 
 
     //Shows full word in Green after users gets it correct
@@ -356,10 +399,17 @@ public class GameLogic {
     }
 
 
+
+
+
+
+
     //toggles keyboard clickability
     //turns off keyboard touch when user ends a round
     //turns on keyboard touch at the start of the round
     private void setKeyboardClickable(boolean toggle){
+
+        ConstraintLayout k_layout = activity.findViewById(R.id.keyboard_layout);
 
         for(char keys='a'; keys <= 'z'; keys++){
 
@@ -369,12 +419,25 @@ public class GameLogic {
             if(toggle){
                 //Turn on touch
                 keyView.setClickable(true);
+
+                //Make keyboard visible
+                k_layout.setVisibility(View.VISIBLE);
+
             } else {
                 //turn off touch
                 keyView.setClickable(false);
+
+                //make keyboard invisible
+                k_layout.setVisibility(View.INVISIBLE);
             }
         }
+
+
     }
+
+
+
+
 
 
     //set all listeners
@@ -397,6 +460,11 @@ public class GameLogic {
         homeButton_gameOver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                score = 1;
+                storage.setRoundNum(score);
+                storage.setHighScore(highScore);
+
                 context.startActivity(new Intent(context, HomeScreenActivity.class));
 
                 //make dialog invisible
@@ -413,6 +481,7 @@ public class GameLogic {
             public void onClick(View view) {
                 score = 1;
                 setScore(score);
+                setHighScore(highScore);
                 resetGame();
 
                 //make dialog invisible
@@ -437,11 +506,27 @@ public class GameLogic {
     }
 
 
+
+
+
+
     //sets the score
     private void setScore(int newScore){
         TextView scoreView = activity.findViewById(R.id.current_score);
         scoreView.setText(String.valueOf(newScore));
+        storage.setRoundNum(newScore);
     }
+
+
+    //sets highScore
+    private void setHighScore(int newScore){
+        TextView scoreView = activity.findViewById(R.id.high_score_num);
+        scoreView.setText(String.valueOf(newScore));
+        storage.setHighScore(newScore);
+    }
+
+
+
 
 
     //Set visibility of win dialog
