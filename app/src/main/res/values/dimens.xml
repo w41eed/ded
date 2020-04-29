@@ -32,4 +32,8 @@
 
     <dimen name="icon_dimen">100dp</dimen>
 
+
+    <dimen name="home_buttons_width">175dp</dimen>
+    <dimen name="home_buttons_height">90dp</dimen>
+
 </resources>

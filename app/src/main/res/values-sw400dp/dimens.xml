@@ -37,4 +37,9 @@
 
     <dimen name="icon_dimen">125dp</dimen>
 
+
+    <dimen name="home_buttons_width">250dp</dimen>
+    <dimen name="home_buttons_height">125dp</dimen>
+
+
 </resources>
