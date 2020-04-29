@@ -18,6 +18,7 @@ public class classicModeActivity extends AppCompatActivity {
     private String letterChosen;
     private GameLogic gameLogic;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +30,13 @@ public class classicModeActivity extends AppCompatActivity {
 
         gameLogic = new GameLogic(wordList, this, this);
 
+
+    }
+
+
+    //Force user to use home icon
+    @Override
+    public void onBackPressed() {
 
     }
 
