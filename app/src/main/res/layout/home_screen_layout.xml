@@ -9,48 +9,46 @@
 
 
 
-
-    <TextView
-        android:id="@+id/classicMode"
-        android:text="@string/classic"
+    <pl.droidsonroids.gif.GifImageView
+        android:id="@+id/hanging_anim"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"
-        android:textColor="@color/dedRed"
-        android:textStyle="bold"
-        android:onClick="classicMode"
-        />
-
-    <TextView
-        android:id="@+id/ded"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"
-        android:textColor="@color/dedRed"
-        android:textStyle="bold"
-        android:onClick="dedMode"
-        />
-
-    <TextView
-        android:id="@+id/settings"
-        android:text="@string/settings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@android:color/transparent"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp"
-        android:textColor="@color/dedRed"
-        android:textStyle="bold"
-        android:onClick="settingsPage"
+        android:layout_height="0dp"
+        android:src="@drawable/male_hanging_anim"
+        android:layout_margin="20dp"
+        android:layout_weight="1"
         />
 
 
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp"
+        >
+        <ImageView
+            android:id="@+id/home_play_button"
+            android:layout_width="@dimen/home_buttons_width"
+            android:layout_height="@dimen/home_buttons_height"
+            android:src="@drawable/home_play_button"
+            android:layout_margin="20dp"
+            android:onClick="classicMode"
+            />
+
+
+        <ImageView
+            android:id="@+id/home_settings_button"
+            android:layout_width="@dimen/home_buttons_width"
+            android:layout_height="@dimen/home_buttons_height"
+            android:src="@drawable/home_settings_button"
+            android:layout_margin="20dp"
+            android:onClick="settingsPage"
+            />
+
+
+
+    </LinearLayout>
 
 </LinearLayout>
