@@ -254,16 +254,19 @@ public class GameLogic {
             if(chancesLeft == 0){
 
                 //check if new highscore
-                if(score > highScore){
-                    highScore = score;
-                    //store new high score but dont show yet
+                //current round not included in the score
+                if((score -1) > highScore){
+                    highScore = score -1;
                     setHighScore(highScore);
+                    setNewRecordVisibiltiy(true);
                 }
                 //Show full word in red
                 showRedWord();
                 //Make keyboard un clickable
                 setKeyboardClickable(false);
                 //for testing
+                score = 1;
+                storage.setRoundNum(score);
                 setGameOverVisibility(true);
                 //resetGame();
                 //gameOver();
@@ -450,6 +453,7 @@ public class GameLogic {
             @Override
             public void onClick(View view) {
                 context.startActivity(new Intent(context, HomeScreenActivity.class));
+                activity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
         });
 
@@ -466,7 +470,9 @@ public class GameLogic {
                 storage.setHighScore(highScore);
 
                 context.startActivity(new Intent(context, HomeScreenActivity.class));
+                activity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
 
+                setNewRecordVisibiltiy(false);
                 //make dialog invisible
                 setGameOverVisibility(false);
             }
@@ -483,6 +489,8 @@ public class GameLogic {
                 setScore(score);
                 setHighScore(highScore);
                 resetGame();
+
+                setNewRecordVisibiltiy(false);
 
                 //make dialog invisible
                 setGameOverVisibility(false);
@@ -526,6 +534,21 @@ public class GameLogic {
     }
 
 
+
+
+    //shows highscore if new one has been made
+    private void setNewRecordVisibiltiy(boolean visible){
+
+        LinearLayout newRecord = activity.findViewById(R.id.new_record);
+
+        if(visible){
+            TextView record = activity.findViewById(R.id.new_record_text);
+            record.setText(String.valueOf(highScore));
+            newRecord.setVisibility(View.VISIBLE);
+        } else {
+            newRecord.setVisibility(View.GONE);
+        }
+    }
 
 
 
