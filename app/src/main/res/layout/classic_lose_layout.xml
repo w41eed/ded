@@ -21,6 +21,43 @@
 
 
     <LinearLayout
+        android:id="@+id/new_record"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
+        >
+
+        <pl.droidsonroids.gif.GifImageView
+            android:id="@+id/new_record_view"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+            android:src="@drawable/new_record_anim"
+            />
+
+        <TextView
+            android:id="@+id/new_record_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/gamebar_text_size"
+            android:text="123"
+            android:fontFamily="@font/pencilgrid"
+            android:layout_marginTop="2dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="2dp"
+            />
+
+
+    </LinearLayout>
+
+
+
+
+
+
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
