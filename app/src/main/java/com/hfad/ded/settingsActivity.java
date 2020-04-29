@@ -36,18 +36,25 @@ public class settingsActivity extends AppCompatActivity {
         setKeyboard();
         setSound();
 
+    }
 
 
-
-
+    //Force user to use home icon
+    @Override
+    public void onBackPressed() {
 
     }
+
+
+
 
 
     //Takes user to Home screen
     public void goHome(View view){
         Intent intent = new Intent(getApplicationContext(), HomeScreenActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
+
     }
 
 
@@ -135,6 +142,12 @@ public class settingsActivity extends AppCompatActivity {
     }
 
 
+
+
+    //Takes user to rate app
+    public void rateApp(View view){
+
+    }
 
 
 }
