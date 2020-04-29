@@ -38,7 +38,7 @@
             android:id="@+id/current_round"
             android:layout_width="@dimen/gamebar_round_width"
             android:layout_height="@dimen/gamebar_round_height"
-            android:src="@drawable/round"
+            android:src="@drawable/score"
             />
 
         <TextView
@@ -49,6 +49,8 @@
             android:textSize="@dimen/gamebar_text_size"
             android:fontFamily="@font/pencilgrid"
             android:textColor="@color/black"
+            android:layout_marginTop="2dp"
+
 
             />
 
@@ -78,6 +80,7 @@
             android:layout_height="@dimen/gamebar_record_height"
             android:src="@drawable/record"
             android:layout_marginEnd="3dp"
+
             />
 
         <TextView
@@ -88,6 +91,7 @@
             android:textSize="@dimen/gamebar_text_size"
             android:fontFamily="@font/pencilgrid"
             android:textColor="@color/black"
+            android:layout_marginTop="2dp"
             />
 
     </LinearLayout>
