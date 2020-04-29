@@ -3,6 +3,7 @@ package com.hfad.ded;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -18,10 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 public class HomeScreenActivity extends AppCompatActivity {
 
     private ArrayList<String> wordList;
-    //private TextView classicBtn, dedBtn, settingsBtn;
     private BufferedReader reader;
 
-    private int maxLen = 12;
+    private storageHandler storage;
+    private String gender, sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,10 +39,20 @@ public class HomeScreenActivity extends AppCompatActivity {
         //Load Words from txt files
         loadData();
 
-        getMaxlen();
-
+        storage = new storageHandler(this);
+        setHomeAnim(storage.getGender());
+        sound = storage.getSound();
 
     }
+
+
+    //Force user to use home icon
+    @Override
+    public void onBackPressed() {
+
+    }
+
+
 
     //Loads the words from file to wordList
     private void loadData(){
@@ -84,40 +95,27 @@ public class HomeScreenActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), classicModeActivity.class);
         intent.putExtra("WORDS", wordList);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
-
-    //Takes user to ded mode screen
-    public void dedMode(View view){
-
-    }
 
 
     //Takes user to settings page screen
     public void settingsPage(View view){
         Intent intent = new Intent(getApplicationContext(), settingsActivity.class);
         startActivity(intent);
+        overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
     }
 
+    private void setHomeAnim(String gender){
 
+        ImageView anim = findViewById(R.id.hanging_anim);
 
-
-
-    //Used for testing
-    //REMOVE BEFORE FINAL WORKING APP
-    private void getMaxlen(){
-
-        int index = 0;
-
-        for(int i = 0; i<wordList.size(); i++) {
-
-             int len= wordList.get(i).length();
-             if(len <= 2){
-                 index++;
-             }
+        if(gender.equals("male")){
+            anim.setImageResource(R.drawable.male_hanging_anim);
+        } else {
+            anim.setImageResource(R.drawable.female_hanging_anim);
         }
-        TextView test1 = findViewById(R.id.ded);
-        test1.setText(String.valueOf(index));
-
     }
+
 }
