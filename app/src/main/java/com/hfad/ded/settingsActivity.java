@@ -1,6 +1,8 @@
 package com.hfad.ded;
 
+import android.content.ActivityNotFoundException;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
@@ -12,6 +14,7 @@ public class settingsActivity extends AppCompatActivity {
     private String gender, keyboardStyle, sound;
     private ImageView male, female, qwerty, abcdef, sound_on, sound_off;
     private storageHandler storage;
+    private soundEffectsHandler audio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,10 @@ public class settingsActivity extends AppCompatActivity {
         keyboardStyle = storage.getKeyboard();
         sound = storage.getSound();
 
+        //create audio handler
+        audio = new soundEffectsHandler(this);
+        audio.setSoundToggle(sound);
+
         setCharacter();
         setKeyboard();
         setSound();
@@ -51,6 +58,10 @@ public class settingsActivity extends AppCompatActivity {
 
     //Takes user to Home screen
     public void goHome(View view){
+
+        //Play Sound
+        audio.playButtonPress();
+        //Call intent
         Intent intent = new Intent(getApplicationContext(), HomeScreenActivity.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
@@ -64,6 +75,9 @@ public class settingsActivity extends AppCompatActivity {
 
     //Sets user's character choice
     public void chooseCharacter(View view) {
+
+        //Play Sound
+        audio.playButtonPress();
 
         gender = String.valueOf(view.getTag());
         storage.setGender(gender);
@@ -92,6 +106,9 @@ public class settingsActivity extends AppCompatActivity {
 
     //sets user's keyboard preference
     public void chooseKeyboard(View view) {
+
+        //Play Sound
+        audio.playButtonPress();
 
         keyboardStyle = String.valueOf(view.getTag());
         storage.setKeyboard(keyboardStyle);
@@ -123,6 +140,11 @@ public class settingsActivity extends AppCompatActivity {
 
         sound = String.valueOf(view.getTag());
         storage.setSound(sound);
+
+        //Play Sound
+        audio.setSoundToggle(sound);
+        audio.playButtonPress();
+
         setSound();
     }
 
@@ -146,6 +168,21 @@ public class settingsActivity extends AppCompatActivity {
 
     //Takes user to rate app
     public void rateApp(View view){
+
+        Uri uri = Uri.parse("market://details?id=" + getPackageName());
+        Intent goToMarket = new Intent(Intent.ACTION_VIEW, uri);
+        // To count with Play market backstack, After pressing back button,
+        // to taken back to our application, we need to add following flags to intent.
+        goToMarket.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY |
+                Intent.FLAG_ACTIVITY_NEW_DOCUMENT |
+                Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+        try {
+            startActivity(goToMarket);
+        } catch (ActivityNotFoundException e) {
+            startActivity(new Intent(Intent.ACTION_VIEW,
+                    Uri.parse("http://play.google.com/store/apps/details?id=" + getPackageName())));
+        }
+
 
     }
 
