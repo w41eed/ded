@@ -63,7 +63,7 @@ public class storageHandler {
     }
 
     public int getRoundNum(){
-        return sharedPref.getInt("round", 1);
+        return sharedPref.getInt("round", 0);
     }
 
 
@@ -75,7 +75,7 @@ public class storageHandler {
     }
 
     public int getHighScore(){
-        return sharedPref.getInt("highScore", 1);
+        return sharedPref.getInt("highScore", 0);
     }
 
 
