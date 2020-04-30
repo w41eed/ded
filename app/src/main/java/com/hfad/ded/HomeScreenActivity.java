@@ -22,7 +22,8 @@ public class HomeScreenActivity extends AppCompatActivity {
     private BufferedReader reader;
 
     private storageHandler storage;
-    private String gender, sound;
+    private soundEffectsHandler audio;
+    private String sound;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,11 @@ public class HomeScreenActivity extends AppCompatActivity {
         storage = new storageHandler(this);
         setHomeAnim(storage.getGender());
         sound = storage.getSound();
+
+        //create audio handler
+        audio = new soundEffectsHandler(this);
+        audio.setSoundToggle(sound);
+
 
     }
 
@@ -92,6 +98,10 @@ public class HomeScreenActivity extends AppCompatActivity {
     //Takes user to classic mode screen
     public void classicMode(View view){
 
+
+        //Play Button sound
+        audio.playButtonPress();
+
         Intent intent = new Intent(getApplicationContext(), classicModeActivity.class);
         intent.putExtra("WORDS", wordList);
         startActivity(intent);
@@ -102,6 +112,10 @@ public class HomeScreenActivity extends AppCompatActivity {
 
     //Takes user to settings page screen
     public void settingsPage(View view){
+
+        //Play Button sound
+        audio.playButtonPress();
+
         Intent intent = new Intent(getApplicationContext(), settingsActivity.class);
         startActivity(intent);
         overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
