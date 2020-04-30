@@ -48,12 +48,12 @@ public class classicModeActivity extends AppCompatActivity {
         wordList = new ArrayList<>();
         //Initialize wordLen
         wordLen = 0;
-        //initialize strikeNum
+        /*//initialize strikeNum
         strikeNum = 0;
         //initialize score
         score = 0;
         //initialize index of occurrences
-        indexOfOccurence = new ArrayList<>();
+        indexOfOccurence = new ArrayList<>();*/
     }
 
 
