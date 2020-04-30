@@ -51,6 +51,9 @@ public class GameLogic {
     private String gender, keyboardStyle, sound;
     private storageHandler storage;
 
+    //Audio
+    private soundEffectsHandler audio;
+
     public GameLogic(ArrayList<String> words, Context con, Activity act){
 
 
@@ -103,6 +106,13 @@ public class GameLogic {
         setScore(score);
         highScore = storage.getHighScore();
         setHighScore(highScore);
+
+
+        //set sound
+        //create audio handler
+        audio = new soundEffectsHandler(context);
+        audio.setSoundToggle(sound);
+
 
         //Set keyboard
         keyboard = activity.findViewById(R.id.keyboards);
@@ -196,9 +206,9 @@ public class GameLogic {
         int upperBound = words.size();
         int randNum = rand.nextInt(upperBound);
 
-        //FOR TESTING
+        /*//FOR TESTING
         TextView test = activity.findViewById(R.id.test);
-        test.setText(words.get(randNum));
+        test.setText(words.get(randNum));*/
 
         return words.get(randNum);
     }
@@ -206,6 +216,10 @@ public class GameLogic {
 
     //when user chooses a letter
     public void chooseALetter(View view){
+
+
+        //Play key pressed
+        audio.playKeyPress();
 
         //retrieves view Id in string format
         String letterChosen = context.getResources().getResourceEntryName(view.getId());
@@ -237,8 +251,13 @@ public class GameLogic {
                 showGreenWord();
                 //update score but dont display yet
                 score++;
+                storage.setRoundNum(score);
                 //Make keyboard un clickable
                 setKeyboardClickable(false);
+
+                //Play correct guess sound
+                audio.playCorrectGuess();
+
                 //show next round dialog //Score view gets updated after this is visible
                 setCorrectWordVisibility(true);
 
@@ -247,6 +266,11 @@ public class GameLogic {
 
         } else {
             //Letter is wrong
+
+            //Play wrong pencil strike sound
+            audio.playPencilStrike();
+
+            //Show wrong view
             isWrong(view);
             chancesLeft--;
             chancesLeft(chancesLeft);
@@ -255,8 +279,8 @@ public class GameLogic {
 
                 //check if new highscore
                 //current round not included in the score
-                if((score -1) > highScore){
-                    highScore = score -1;
+                if(score > highScore){
+                    highScore = score;
                     setHighScore(highScore);
                     setNewRecordVisibiltiy(true);
                 }
@@ -265,8 +289,12 @@ public class GameLogic {
                 //Make keyboard un clickable
                 setKeyboardClickable(false);
                 //for testing
-                score = 1;
+                score = 0;
                 storage.setRoundNum(score);
+
+                //Play game over sound
+                audio.playGameOver();
+
                 setGameOverVisibility(true);
                 //resetGame();
                 //gameOver();
@@ -452,6 +480,11 @@ public class GameLogic {
         homeButtonGameBar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //play button press
+                audio.playButtonPress();
+
+                //go to home activity
                 context.startActivity(new Intent(context, HomeScreenActivity.class));
                 activity.overridePendingTransition(android.R.anim.fade_in, android.R.anim.fade_out);
             }
@@ -465,7 +498,11 @@ public class GameLogic {
             @Override
             public void onClick(View view) {
 
-                score = 1;
+
+                //play button press
+                audio.playButtonPress();
+
+                score = 0;
                 storage.setRoundNum(score);
                 storage.setHighScore(highScore);
 
@@ -485,7 +522,11 @@ public class GameLogic {
         play_again.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                score = 1;
+
+                //play button press
+                audio.playButtonPress();
+
+                score = 0;
                 setScore(score);
                 setHighScore(highScore);
                 resetGame();
@@ -503,6 +544,10 @@ public class GameLogic {
         next_round.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
+                //play button press
+                audio.playButtonPress();
+
                 setScore(score);
                 resetGame();
 
