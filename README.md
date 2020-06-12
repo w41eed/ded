@@ -14,7 +14,7 @@ A simple hangman game reimagined as the original pen and pencil game You have to
 
 Many modern iterations of Hangman follow a cleaner UI with highly detailed graphical elements. However, my goal with the design of this game was to reimagine it as the original paper and pencil game it is and in order to give the user that experience, the UI had to look like it was drawn by hand. The main background used in all the activities resembles a sheet of paper and all the visual elements were drawn using a custom brush that resembles ink on paper. I used Photoshop to create all my graphic designs for this project.
 
-| ![](ScreenShot 1.png)Home Screen | ![](RackMultipart20200612-4-i8y1re_html_1c5205105452742a.png)Settings screen | ![](RackMultipart20200612-4-i8y1re_html_37b4df9879e71741.png)Gameplay screen |
+| <img src="ScreenShot 1.png">Home Screen | ![](RackMultipart20200612-4-i8y1re_html_1c5205105452742a.png)Settings screen | ![](RackMultipart20200612-4-i8y1re_html_37b4df9879e71741.png)Gameplay screen |
 | --- | --- | --- |
 
 **Architecture:**
